@@ -1,0 +1,59 @@
+.challengesheader {
+  background-color: #000;
+  color: #fff;
+  padding: 16px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 24px;
+}
+
+.challengesitem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.challengesicon {
+  font-size: 1.5rem; /* text-2xl */
+}
+
+.challengesdiamond {
+  color: #60a5fa; /* blue-400 */
+}
+
+.challengeskey {
+  color: #34d399; /* green-400 */
+}
+
+.challengesstar {
+  color: #facc15; /* yellow-400 */
+}
+
+.challengesvalue {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: bold;
+}
+
+.challengesdivider {
+  color: #6b7280; /* gray-500 */
+  font-size: 1.25rem;
+}
+
+.challengeslevelBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #6b7280; /* gray-500 */
+  border-radius: 9999px; /* rounded-full */
+  padding: 4px 12px;
+}
+
+.challengeslevelValue {
+  font-size: 1.125rem; /* text-lg */
+  font-weight: bold;
+}
+
+.challengeslevelLabel {
+  font-size: 0.75rem; /* text-xs */
+}

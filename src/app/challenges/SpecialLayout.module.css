@@ -1,0 +1,16 @@
+.specialLayout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: black; 
+  color: white;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 1.5rem; 
+}
+
+.noPadding {
+  padding: 0;
+}

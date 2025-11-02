@@ -1,0 +1,297 @@
+/* components/AboutVarium.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+.aboutSection {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.section {
+  padding: 1rem 4rem;
+}
+
+.darkSection {
+  background: linear-gradient(180deg, #19161C 0%, #000000 100%) !important;
+  color: #ffffff;
+}
+
+.container {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: inherit;
+  position: relative;
+}
+
+.heading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #E1BC88, #7B674A);
+}
+
+.darkSection .heading::after {
+  background: linear-gradient(90deg, #E1BC88, #7B674A);
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: inherit;
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.imageContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 20px;
+}
+
+/* Smoother Dotted background pattern */
+.imageContent::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(circle, #E1BC88 1.5px, transparent 1.5px);
+  background-size: 25px 25px;
+  background-position: 0 0;
+  opacity: 0.25;
+  z-index: 0;
+  border-radius: 10px;
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: scale(0.98);
+  filter: blur(0.3px);
+}
+
+.darkSection .imageContent::before {
+  background-image: radial-gradient(circle, #7B674A 1.5px, transparent 1.5px);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  z-index: 1;
+}
+
+/* Enhanced Hover effects with smoother transitions */
+.imageContent:hover .image {
+  transform: scale(1.03);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.imageContent:hover::before {
+  transform: scale(1.04);
+  opacity: 0.35;
+  background-size: 23px 23px;
+  filter: blur(0.5px);
+}
+
+/* Smoother Animation for dots movement */
+@keyframes smoothDotsMove {
+  0% {
+    background-position: 0 0;
+    opacity: 0.25;
+  }
+  33% {
+    background-position: 8px 8px;
+    opacity: 0.3;
+  }
+  66% {
+    background-position: 16px 16px;
+    opacity: 0.35;
+  }
+  100% {
+    background-position: 25px 25px;
+    opacity: 0.4;
+  }
+}
+
+.imageContent:hover::before {
+  animation: smoothDotsMove 3s infinite alternate ease-in-out;
+}
+
+/* Subtle pulse effect for more dynamism */
+@keyframes subtlePulse {
+  0% {
+    transform: scale(1.04) rotate(0.2deg);
+  }
+  50% {
+    transform: scale(1.06) rotate(-0.2deg);
+  }
+  100% {
+    transform: scale(1.04) rotate(0.2deg);
+  }
+}
+
+.imageContent:hover::before {
+  animation: 
+    smoothDotsMove 4s infinite alternate ease-in-out,
+    subtlePulse 6s infinite ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .container {
+    gap: 3rem;
+  }
+  
+  .heading {
+    font-size: 2.2rem;
+  }
+  
+  .description {
+    font-size: 1.05rem;
+  }
+  
+  .imageContent::before {
+    background-size: 22px 22px;
+  }
+  
+  .imageContent:hover::before {
+    background-size: 20px 20px;
+  }
+  
+  @keyframes smoothDotsMove {
+    0% { background-position: 0 0; opacity: 0.25; }
+    33% { background-position: 7px 7px; opacity: 0.3; }
+    66% { background-position: 14px 14px; opacity: 0.35; }
+    100% { background-position: 22px 22px; opacity: 0.4; }
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    text-align: center;
+  }
+  
+  .heading::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .heading {
+    font-size: 2rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+  
+  .imageContent::before {
+    background-size: 18px 18px;
+  }
+  
+  .imageContent:hover::before {
+    background-size: 16px 16px;
+  }
+  
+  @keyframes smoothDotsMove {
+    0% { background-position: 0 0; opacity: 0.25; }
+    33% { background-position: 6px 6px; opacity: 0.3; }
+    66% { background-position: 12px 12px; opacity: 0.35; }
+    100% { background-position: 18px 18px; opacity: 0.4; }
+  }
+  
+  /* Reverse order for second section on mobile */
+  .darkSection .container {
+    direction: rtl;
+  }
+  
+  .darkSection .container > * {
+    direction: ltr;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 2rem 1rem;
+  }
+  
+  .heading {
+    font-size: 1.8rem;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+  
+  .container {
+    gap: 2rem;
+  }
+  
+  .imageContent {
+    padding: 15px;
+  }
+  
+  .imageContent::before {
+    background-size: 15px 15px;
+  }
+  
+  .imageContent:hover::before {
+    background-size: 14px 14px;
+  }
+  
+  @keyframes smoothDotsMove {
+    0% { background-position: 0 0; opacity: 0.25; }
+    33% { background-position: 5px 5px; opacity: 0.3; }
+    66% { background-position: 10px 10px; opacity: 0.35; }
+    100% { background-position: 15px 15px; opacity: 0.4; }
+  }
+}
+
+/* Performance optimization */
+.imageContent::before {
+  will-change: transform, opacity, background-position, filter;
+}
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .imageContent::before,
+  .image {
+    transition: none;
+    animation: none;
+  }
+  
+  .imageContent:hover .image {
+    transform: scale(1.02);
+  }
+  
+  .imageContent:hover::before {
+    transform: scale(1.02);
+    opacity: 0.3;
+  }
+}

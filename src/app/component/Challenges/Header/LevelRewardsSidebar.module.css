@@ -1,0 +1,348 @@
+/* Overlay background behind sidebar */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6); /* dark blur background */
+  backdrop-filter: blur(.5px);
+  z-index: 9998;
+  transition: opacity 0.3s ease;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 380px;
+  height: 100vh;
+  background: #111;
+  color: #fff;
+  padding: 20px;
+  /* overflow-y: auto; */
+  overflow: hidden;
+  z-index: 9999;
+  border-left: 2px solid #00ff7f30;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.4);
+  /* font-family: "Poppins", sans-serif; */
+    display: flex;
+  flex-direction: column;
+}
+
+/* Header Top Section */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  position: sticky;
+  top: 0;
+  background: #111;
+  /* z-index: 10; */
+  padding-bottom: 10px;
+}
+.header,
+.title {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+
+.levelCircle {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2.7px solid #ffa500FF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.levelNumber {
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.levelLabel {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.challengeProgress {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.carIcon {
+  color: #ccc;
+  font-size: 18px;
+}
+
+.title {
+  font-size: 18px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #333;
+  padding-bottom: 5px;
+  position: sticky;
+  top: 85px; 
+  background: #111;
+  /* z-index: 9; */
+}
+
+/* Make only the list scrollable */
+.levelList {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 5px;
+  margin-top: 10px;
+}
+
+/* Hide scrollbar (optional) */
+.levelList::-webkit-scrollbar {
+  width: 6px;
+}
+.levelList::-webkit-scrollbar-thumb {
+  background: #7f818150;
+  border-radius: 3px;
+}
+.levelList::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Level Block */
+.levelBlock {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #222;
+}
+
+.levelHeader {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.levelTag {
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 4px;
+  color: #000;
+  font-size: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.greenTag {
+  background-color: #00c851;
+  color: #fff;
+}
+
+.orangeTag {
+  background-color: #ffbb33;
+  color: #fff;
+}
+
+/* .tagIcon {
+  margin-right: 5px;
+  vertical-align: middle;
+  font-size: 13px;
+} */
+
+.requirement {
+  font-size: 13px;
+  color: #bbb;
+}
+
+.rewards {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.rewardBox {
+  background: #1a1a1a;
+  position: relative;
+  border-radius: 6px;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  padding-top: 10px;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+}
+
+.rewardBox img {
+  width: 100%;
+  height: 40px;
+  object-fit: contain;
+}
+
+.rewardName {
+  font-size: 12px;
+  color: #ccc;
+  margin-top: 6px;
+}
+
+.rewardStatusIcon {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+
+.checkIcon {
+  color: #00ff66;
+}
+
+.lockIcon {
+  color: #888;
+}
+
+.completed .rewardBox {
+  opacity: 1;
+}
+
+.locked .rewardBox {
+  opacity: 0.4;
+}
+
+.currentLevel .rewardBox {
+  opacity: 1;
+  border: 2px solid #00ff66;
+  height: auto;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #999;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.closeBtn:hover {
+  color: #fff;
+}
+
+
+/* ------------------------------ */
+/* Responsive Design Section   */
+/* ------------------------------ */
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    max-width: none;
+    padding: 15px;
+    border-left: none;
+    border-top: 2px solid #00ff7f30;
+    bottom: 0;
+    height: 90vh;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.5);
+    animation: slideUp 0.3s ease forwards;
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .overlay {
+    background: rgba(0, 0, 0, 0.75);
+  }
+
+  .header {
+    top: 10;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 16px;
+    text-align: center;
+    top: 114px;
+  }
+
+  .levelCircle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .levelNumber {
+    font-size: 18px;
+  }
+
+  .challengeProgress {
+    font-size: 13px;
+  }
+
+  .levelHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .requirement {
+    font-size: 12px;
+  }
+
+  .rewards {
+    justify-content: center;
+  }
+
+  .rewardBox {
+    width: 85px;
+    height: 85px;
+  }
+
+  .rewardName {
+    font-size: 11px;
+  }
+
+  .closeBtn {
+    top: 8px;
+    right: 10px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .sidebar {
+    height: 92vh;
+    padding: 12px;
+  }
+
+  .levelCircle {
+    width: 55px;
+    height: 55px;
+  }
+
+  .levelNumber {
+    font-size: 16px;
+  }
+
+  .rewardBox {
+    width: 80px;
+    height: 80px;
+  }
+
+  .rewardName {
+    font-size: 10px;
+  }
+}

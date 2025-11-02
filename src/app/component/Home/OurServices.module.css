@@ -1,0 +1,264 @@
+/* components/OurServices.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Sansita+One&display=swap');
+
+.servicesSection {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.backgroundText {
+  font-size: 7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #E1BC88 0%, #886C41 126.79%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.5;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.mainHeading {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.ourServicesTitle {
+  font-family: 'Sansita One', cursive;
+  font-size: 3.5rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  font-weight: 400;
+}
+
+.exteriorTitle {
+  font-family: 'Sansita One', cursive;
+  font-size: 1.8rem;
+  color: #E1BC88;
+  font-style: italic;
+  margin: 0;
+}
+
+.serviceContainer {
+  max-width: 1200px;
+  margin: 0 auto 4rem;
+}
+
+.serviceRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.reverseRow {
+  direction: rtl;
+}
+
+.reverseRow > * {
+  direction: ltr;
+}
+
+.textContent {
+  background-color: #111111;
+  padding: 2.5rem;
+  border-radius: 12px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.serviceSubtitle {
+  font-family: 'Sansita One', cursive;
+  font-size: 1.8rem;
+  /* color: #E1BC88; */
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.serviceDescription {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #CCCCCC;
+  margin-bottom: 2rem;
+}
+
+.learnMoreBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* background: linear-gradient(90deg, #E1BC88, #886C41); */
+  color: white;
+  padding: 0.8rem 1.8rem;
+  border: 1px solid white;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: fit-content;
+}
+
+.learnMoreBtn:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(225, 188, 136, 0.3);
+}
+
+.arrowIcon {
+  transition: transform 0.3s ease;
+}
+
+.learnMoreBtn:hover .arrowIcon {
+  transform: translateX(3px);
+}
+
+.imageContent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    overflow: hidden;
+      border-radius: 12px;
+}
+
+.serviceImage {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.serviceImage:hover {
+  /* transform: scale(1.03); */
+  transform: scale(1.03);
+}
+
+.interiorHeading {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.interiorTitle {
+  font-family: 'Sansita One', cursive;
+  font-size: 2.2rem;
+  color: #E1BC88;
+  font-weight: 400;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .backgroundText {
+    font-size: 6rem;
+    top: 3rem;
+  }
+  
+  .ourServicesTitle {
+    font-size: 2.2rem;
+  }
+  
+  .exteriorTitle {
+    font-size: 1.6rem;
+  }
+  
+  .serviceSubtitle {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .servicesSection {
+    padding: 3rem 1.5rem;
+  }
+  
+  .backgroundText {
+    font-size: 4rem;
+    top: 4rem;
+  }
+  
+  .serviceRow {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+  
+  .reverseRow {
+    direction: ltr;
+  }
+  
+  .ourServicesTitle {
+    font-size: 2rem;
+  }
+  
+  .exteriorTitle {
+    font-size: 1.4rem;
+  }
+  
+  .interiorTitle {
+    font-size: 1.8rem;
+  }
+  
+  .textContent {
+    padding: 2rem;
+  }
+  
+  .learnMoreBtn {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .servicesSection {
+    padding: 2rem 1rem;
+  }
+  
+  .backgroundText {
+    font-size: 3rem;
+    top: 3rem;
+  }
+  
+  .ourServicesTitle {
+    font-size: 1.8rem;
+  }
+  
+  .exteriorTitle {
+    font-size: 1.2rem;
+  }
+  
+  .interiorTitle {
+    font-size: 1.5rem;
+  }
+  
+  .serviceSubtitle {
+    font-size: 1.3rem;
+  }
+  
+  .serviceDescription {
+    font-size: 1rem;
+  }
+  
+  .textContent {
+    padding: 1.5rem;
+  }
+  
+  .learnMoreBtn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

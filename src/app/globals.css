@@ -1,15 +1,20 @@
 @import "tailwindcss";
 
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap'); */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --bg-main: #0E0E0E;
+  /* --bg-main: #0E0E0E; */
+  --white: #ffffff;
+  --black: #000000;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-montserrat);
+  --font-mono: var(--font-montserrat);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +24,141 @@
   }
 }
 
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-main);
+  color: var(--white);
+  font-family: var(--font-montserrat), sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.gradientcolor {
+  background: linear-gradient(180deg, #E1BC88 0%, #7B674A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;   
+  line-height: 1.2;       
+  padding-right: 4px; 
+}
+
+button {
+  cursor: pointer;
+}
+
+.mainPadding {
+  padding: 4rem;
+  /* Desktop / default */
+}
+
+@media (max-width: 1024px) {
+  .mainPadding {
+    padding: 3rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .mainPadding {
+    padding: 0 3 1.5rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .mainPadding {
+    /* padding: 3rem 1rem 0 1rem; */
+    padding: 3rem 1rem;
+  }
+}
+
+
+.mainHeading {
+  /* font-size: 4rem; */
+    font-size: clamp(2rem, 4vw, 4rem);
+  /* Desktop / default */
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .mainHeading {
+    font-size: 2.8rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .mainHeading {
+    font-size: 2.2rem;
+  }
+}
+
+/* Default (Desktop / large screens) */
+p {
+  font-size: 1.1rem;
+}
+
+/* Tablet screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+  p {
+    font-size: 1.05rem;
+  }
+}
+
+/* Mobile screens (max-width: 480px) */
+@media (max-width: 480px) {
+  p {
+    font-size: 1rem ;
+  }
+}
+
+
+/* main button color */
+.mainButton {
+  background: linear-gradient(180deg, #E1BC88 0%, #7B674A 100%);
+  background-blend-mode: overlay;
+  border: none;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+
+.mainButton:hover {
+  opacity: 0.8;
+}
+
+/* secondary button color */
+.secondaryButton {
+      background: linear-gradient(#e1bc88 25%, #7b674a 100%);
+    background-blend-mode: overlay;
+    transition: opacity 0.3s ease;
+}
+
+
+
+
+/*yeh input type file ka style hai*/
+.fileInput::-webkit-file-upload-button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.fileInput::file-selector-button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-right: 1rem;
+  cursor: pointer;
 }

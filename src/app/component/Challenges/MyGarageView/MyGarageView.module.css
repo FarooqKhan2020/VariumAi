@@ -1,0 +1,728 @@
+:root {
+  --glass-bg: rgba(10, 12, 14, 0.55);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --accent: #f5ad13;
+  --muted: rgba(255, 255, 255, 0.78);
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  overflow: hidden;
+  display: block;
+  background: #0a0b0d;
+}
+
+/* === FULLSCREEN BIKE BACKGROUND === */
+.imageBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 1;
+  background: #0a0b0d;
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transform-origin: center center;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* === OVERLAY CONTAINER (ALL UI FLOATS ABOVE IMAGE) === */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.overlay * {
+  pointer-events: auto;
+}
+
+/* === PROFILE BOX (TOP LEFT) === */
+.profileBox {
+  position: absolute;
+  left: 32px;
+  top: 22px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 16px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(18,22,26,0.7), rgba(12,13,15,0.5));
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  z-index: 40;
+  min-width: 150px;
+  transition: all 0.3s ease;
+}
+
+.avatarWrap {
+  position: relative;
+  width: 66px;
+  height: 66px;
+  flex-shrink: 0;
+}
+
+.avatar {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.06);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
+.ratingBadge {
+  position: absolute;
+  right: -8px;
+  bottom: -8px;
+  background: linear-gradient(180deg, #ffb84d, #f09300);
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.12);
+  box-shadow: 0 4px 10px rgba(245,173,19,0.16);
+}
+
+.username {
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+  letter-spacing: 0.3px;
+}
+
+/* === CLOSE BUTTON (TOP RIGHT) === */
+.closeCircle {
+  position: absolute;
+  top: 22px;
+  right: 26px;
+  z-index: 50;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.12);
+  background: rgba(8,8,8,0.45);
+  color: #fff;
+  font-weight: 700;
+  font-size: 18px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  transition: transform .16s ease, box-shadow .16s ease;
+}
+
+.closeCircle:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.6);
+}
+
+/* === NAVIGATION ARROWS === */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 62px;
+  height: 92px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-size: 28px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: linear-gradient(180deg, rgba(0,0,0,0.55), rgba(10,10,10,0.35));
+  color: #fff;
+  cursor: pointer;
+  z-index: 45;
+  transition: transform .16s ease, background .16s ease;
+  backdrop-filter: blur(6px);
+}
+
+.arrow:hover {
+  transform: translateY(-50%) scale(1.05);
+  background: rgba(255,255,255,0.02);
+}
+
+.left { 
+  left: 18px; 
+}
+
+.right { 
+  right: 18px; 
+}
+
+/* === INFO BOX (BOTTOM LEFT) === */
+.infoBox {
+  position: absolute;
+  left: 34px;
+  bottom: 32px;
+  z-index: 40;
+  background: linear-gradient(180deg, rgba(10,12,14,0.55), rgba(8,9,11,0.35));
+  padding: 14px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.55);
+  min-width: 260px;
+  transition: all 0.3s ease;
+}
+
+.starBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: #111;
+  padding: 6px 10px;
+  border-radius: 12px;
+  font-weight: 700;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+  font-size: 14px;
+}
+
+.challengeTitle {
+  font-size: 22px;
+  font-weight: 700;
+  margin-top: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.carName {
+  font-size: 13px;
+  color: rgba(255,255,255,0.84);
+  margin-top: 6px;
+}
+
+/* === VIEW SWITCH (BOTTOM CENTER) === */
+.viewSwitch {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 42px;
+  z-index: 42;
+  display: flex;
+  gap: 6px;
+  background: rgba(8,8,8,0.48);
+  padding: 8px;
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.06);
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.switchBtn {
+  padding: 8px 18px;
+  border-radius: 18px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.switchBtn:hover {
+  transform: scale(1.03);
+}
+
+.switchBtn.active {
+  background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(220,220,220,0.95));
+  color: #222;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.4);
+}
+
+/* === ZOOM CONTROLS (BOTTOM RIGHT) === */
+.zoomControls {
+  position: absolute;
+  right: 36px;
+  bottom: 32px;
+  z-index: 42;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--glass-border);
+  background: linear-gradient(180deg, rgba(10,12,14,0.54), rgba(8,9,11,0.34));
+  backdrop-filter: blur(6px);
+  transition: all 0.3s ease;
+}
+
+.iconBtn {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  border: none;
+  background: rgba(255,255,255,0.03);
+  color: #fff;
+  font-size: 14px;
+  transition: transform 0.2s ease;
+}
+
+.iconBtn:hover:not(:disabled) {
+  transform: scale(1.05);
+  background: rgba(255,255,255,0.08);
+}
+
+.iconBtn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.zoomRange {
+  width: 170px;
+  appearance: none;
+  height: 6px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+}
+
+.zoomRange::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid rgba(255,255,255,0.12);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+
+.zoomRange::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid rgba(255,255,255,0.12);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+
+/* ============================ */
+/* === MOBILE RESPONSIVENESS === */
+/* ============================ */
+
+/* Tablet Devices (768px - 1024px) */
+@media (max-width: 1024px) {
+  .profileBox {
+    left: 20px;
+    top: 18px;
+    padding: 10px 14px;
+    min-width: 140px;
+  }
+  
+  .avatarWrap {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .avatar {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .username {
+    font-size: 14px;
+  }
+  
+  .closeCircle {
+    top: 18px;
+    right: 20px;
+    width: 42px;
+    height: 42px;
+    font-size: 16px;
+  }
+  
+  .arrow {
+    width: 52px;
+    height: 80px;
+    font-size: 24px;
+  }
+  
+  .infoBox {
+    left: 24px;
+    bottom: 28px;
+    padding: 12px 18px;
+    min-width: 220px;
+  }
+  
+  .challengeTitle {
+    font-size: 20px;
+  }
+  
+  .zoomControls {
+    right: 24px;
+    bottom: 28px;
+    padding: 8px 12px;
+  }
+  
+  .zoomRange {
+    width: 140px;
+  }
+}
+
+/* Mobile Devices (576px - 768px) */
+@media (max-width: 768px) {
+  .profileBox {
+    left: 16px;
+    top: 16px;
+    padding: 8px 12px;
+    min-width: 130px;
+    gap: 8px;
+  }
+  
+  .avatarWrap {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .avatar {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .ratingBadge {
+    font-size: 10px;
+    padding: 3px 6px;
+    right: -6px;
+    bottom: -6px;
+  }
+  
+  .username {
+    font-size: 13px;
+  }
+  
+  .closeCircle {
+    top: 16px;
+    right: 16px;
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+  
+  /* Arrows ko mobile par show karein - size adjust karein */
+  .arrow {
+    width: 46px;
+    height: 70px;
+    font-size: 20px;
+    display: grid; /* Ensure display */
+  }
+  
+  .left {
+    left: 12px;
+  }
+  
+  .right {
+    right: 12px;
+  }
+  
+  /* Mobile Layout Fix - Bottom elements ko stack karein */
+  .infoBox {
+    left: 16px;
+    bottom: 100px; /* Upar le jayein takay overlap na ho */
+    padding: 10px 14px;
+    min-width: 180px;
+  }
+  
+  .viewSwitch {
+    bottom: 60px; /* Beech mein */
+    padding: 6px;
+  }
+  
+  .zoomControls {
+    right: 16px;
+    bottom: 100px; /* InfoBox ke opposite side */
+    padding: 6px 10px;
+    gap: 8px;
+  }
+  
+  .starBadge {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+  
+  .challengeTitle {
+    font-size: 18px;
+    margin-top: 8px;
+  }
+  
+  .carName {
+    font-size: 12px;
+  }
+  
+  .switchBtn {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+  
+  .iconBtn {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+  
+  .zoomRange {
+    width: 120px;
+  }
+}
+
+/* Small Mobile Devices (up to 576px) */
+@media (max-width: 576px) {
+  .profileBox {
+    left: 12px;
+    top: 12px;
+    padding: 6px 10px;
+    min-width: auto;
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+  
+  .avatarWrap {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .avatar {
+    width: 42px;
+    height: 42px;
+  }
+  
+  .ratingBadge {
+    font-size: 9px;
+    padding: 2px 5px;
+    right: -4px;
+    bottom: -4px;
+  }
+  
+  .username {
+    font-size: 12px;
+  }
+  
+  .closeCircle {
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+    font-size: 12px;
+  }
+  
+  /* Arrows ko chota karein lekin show karein */
+  .arrow {
+    width: 40px;
+    height: 60px;
+    font-size: 18px;
+    display: grid; /* Show arrows */
+    border-radius: 12px;
+  }
+  
+  .left {
+    left: 8px;
+  }
+  
+  .right {
+    right: 8px;
+  }
+  
+  /* Small Mobile Layout Fix */
+  .infoBox {
+    left: 12px;
+    bottom: 90px; /* Position adjust */
+    padding: 8px 12px;
+    min-width: 150px;
+  }
+  
+  .viewSwitch {
+    bottom: 50px; /* Position adjust */
+    padding: 4px;
+    gap: 4px;
+  }
+  
+  .zoomControls {
+    right: 12px;
+    bottom: 90px; /* InfoBox ke opposite side */
+    padding: 5px 8px;
+    gap: 6px;
+  }
+  
+  .starBadge {
+    font-size: 11px;
+    padding: 4px 7px;
+  }
+  
+  .challengeTitle {
+    font-size: 16px;
+    margin-top: 6px;
+  }
+  
+  .carName {
+    font-size: 11px;
+  }
+  
+  .switchBtn {
+    padding: 5px 10px;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+  }
+  
+  .iconBtn {
+    width: 28px;
+    height: 28px;
+    font-size: 11px;
+  }
+  
+  .zoomRange {
+    width: 100px;
+    height: 4px;
+  }
+  
+  .zoomRange::-webkit-slider-thumb {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .zoomRange::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Extra Small Devices (up to 400px) */
+@media (max-width: 400px) {
+  .profileBox {
+    left: 8px;
+    top: 8px;
+    padding: 5px 8px;
+  }
+  
+  /* Arrows ko aur chota karein */
+  .arrow {
+    width: 36px;
+    height: 50px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+  
+  .left {
+    left: 6px;
+  }
+  
+  .right {
+    right: 6px;
+  }
+  
+  /* Extra Small Mobile Layout Fix */
+  .infoBox {
+    left: 8px;
+    bottom: 80px; /* Position adjust */
+    padding: 6px 10px;
+    min-width: 130px;
+  }
+  
+  .viewSwitch {
+    bottom: 35px; /* Position adjust */
+  }
+  
+  .zoomControls {
+    right: 8px;
+    bottom: 80px; /* InfoBox ke opposite side */
+  }
+  
+  /* Stack zoom controls vertically on very small screens */
+  @media (max-height: 600px) {
+    .zoomControls {
+      flex-direction: column;
+      width: 40px;
+    }
+    
+    .zoomRange {
+      width: 4px;
+      height: 100px;
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+/* Landscape Mode for Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .profileBox {
+    top: 8px;
+    left: 8px;
+    padding: 4px 8px;
+    min-width: 120px;
+  }
+  
+  .avatarWrap {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .avatar {
+    width: 36px;
+    height: 36px;
+  }
+  
+  /* Landscape mein arrows ko adjust karein */
+  .arrow {
+    width: 34px;
+    height: 45px;
+    font-size: 15px;
+  }
+  
+  /* Landscape Layout Fix */
+  .infoBox {
+    bottom: 60px; /* Position adjust */
+    left: 8px;
+    padding: 6px 10px;
+  }
+  
+  .viewSwitch {
+    bottom: 35px; /* Position adjust */
+  }
+  
+  .zoomControls {
+    bottom: 60px; /* Position adjust */
+    right: 8px;
+  }
+}
+
+/* Very Small Height Devices */
+@media (max-height: 600px) {
+  .infoBox {
+    bottom: 70px !important;
+  }
+  
+  .viewSwitch {
+    bottom: 40px !important;
+  }
+  
+  .zoomControls {
+    bottom: 70px !important;
+  }
+}

@@ -1,0 +1,333 @@
+/* components/NavigationDashboard.module.css */
+.navigationMain {
+  background: linear-gradient(#19161c, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  min-height: 100vh;
+}
+
+.container {
+  width: 95%;
+  max-width: 1400px;
+}
+
+/* Top Navigation Bar - Enhanced Responsiveness */
+.topBar {
+  background-color: #2F2F2F;
+  border-radius: 50px;
+  padding: 1rem 2rem;
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  gap: 0.5rem;
+}
+
+.topBarItem {
+  display: flex;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  transition: color 0.3s;
+  padding: 0.5rem 0.8rem;
+  flex: 1;
+  min-width: 120px;
+  justify-content: center;
+}
+
+.topBarItem:hover {
+  color: #D1AE7E;
+}
+
+.topBarIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.topBarLabel {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Navigation Buttons Grid */
+.navGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.navButton {
+  background: linear-gradient(180deg, #E1BC88 25%, #7B674A 100%);
+  border-radius: 6px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 5.3px 5.3px 17.61px 0px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+.navButton::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(0deg, #FBFBFB, #FBFBFB);
+  opacity: 0;
+  transition: opacity 0.3s;
+  border-radius: 6px;
+}
+
+.navButton:hover::before {
+  opacity: 0.1;
+}
+
+.navButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 8px 8px 25px 0px rgba(0, 0, 0, 0.35);
+}
+
+.buttonContent {
+  display: flex;
+  align-items: center;
+}
+
+.buttonIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: white;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.buttonLabel {
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: left;
+}
+
+.arrowIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: white;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.navButton:hover .arrowIcon {
+  transform: translateX(5px);
+}
+
+/* Start Customizing Button */
+.customizeContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.customizeButton {
+  background-color: white;
+  color: #D1AE7E;
+  border: none;
+  border-radius: 6px;
+  padding: 1.25rem 3rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 5.3px 5.3px 17.61px 0px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.customizeButton:hover {
+  background-color: #f8f8f8;
+  transform: translateY(-3px);
+  box-shadow: 8px 8px 25px 0px rgba(0, 0, 0, 0.35);
+}
+
+/* Enhanced Responsive Design */
+@media (max-width: 1200px) {
+  .topBar {
+    padding: 1rem 1.5rem;
+  }
+  
+  .topBarItem {
+    min-width: 100px;
+    padding: 0.4rem 0.6rem;
+  }
+  
+  .topBarLabel {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .topBar {
+    border-radius: 40px;
+    padding: 1rem;
+    gap: 0.5rem;
+  }
+  
+  .topBarItem {
+    min-width: 90px;
+    padding: 0.4rem;
+    flex: 0 0 calc(33.333% - 1rem);
+  }
+  
+  .topBarLabel {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .navigationMain {
+    padding: 1.5rem 1rem;
+  }
+  
+  .topBar {
+    border-radius: 30px;
+    padding: 1rem;
+    gap: 0.5rem;
+    justify-content: center;
+  }
+  
+  .topBarItem {
+    flex: 0 0 calc(50% - 1rem);
+    min-width: auto;
+    padding: 0.6rem;
+    margin: 0.2rem;
+  }
+  
+  .topBarIcon {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-right: 0.4rem;
+  }
+  
+  .topBarLabel {
+    font-size: 0.7rem;
+  }
+  
+  .navGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .navButton {
+    padding: 1.25rem;
+  }
+  
+  .buttonLabel {
+    font-size: 1rem;
+  }
+  
+  .buttonIcon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.75rem;
+  }
+  
+  .customizeButton {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navigationMain {
+    padding: 1rem 0.5rem;
+  }
+  
+  .topBar {
+    border-radius: 25px;
+    padding: 0.8rem;
+    gap: 0.3rem;
+  }
+  
+  .topBarItem {
+    flex: 0 0 calc(50% - 0.6rem);
+    padding: 0.5rem 0.4rem;
+    margin: 0.1rem;
+    justify-content: start;
+  }
+  
+  .topBarIcon {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.3rem;
+  }
+  
+  .topBarLabel {
+    font-size: 0.65rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .navButton {
+    padding: 1rem;
+  }
+  
+  .buttonIcon {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-right: 0.6rem;
+  }
+  
+  .buttonLabel {
+    font-size: 0.9rem;
+  }
+  
+  .arrowIcon {
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  .customizeButton {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .topBar {
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 0.8rem;
+    gap: 0.5rem;
+  }
+  
+  .topBarItem {
+    flex: 0 0 100%;
+    width: 100%;
+    padding: 0.6rem;
+    justify-content: flex-start;
+  }
+  
+  .topBarLabel {
+    font-size: 0.7rem;
+  }
+  
+  .container {
+    width: 100%;
+  }
+}

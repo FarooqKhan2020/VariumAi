@@ -1,0 +1,83 @@
+.votingWrapper {
+  position: relative;
+  width: 100%;
+  height: 500px; /* adjust as per design */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: flex-end; /* card right side */
+  align-items: center;
+  padding: 2rem;
+  border: 1px solid #fff;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.votingCard {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.votingStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #1f9bb8; /* teal/blue bar */
+  color: white;
+  font-weight: bold;
+  padding: 0.3rem 0.8rem;
+  /* border-radius: 3px; */
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+}
+
+.icon {
+  font-size: 1rem;
+}
+
+.votingTitle {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.votingDescription {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.voteButton {
+  background: #1f9bb8;
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.voteButton:hover {
+  background: #17798f;
+}
+
+
+@media (max-width: 768px) {
+  .votingWrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .votingCard {
+    max-width: 100%;
+    width: 100%;
+  }
+}

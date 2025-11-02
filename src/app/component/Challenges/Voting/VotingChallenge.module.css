@@ -1,0 +1,693 @@
+/* Outer page */
+.votingChallenge {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+/* White thin outer frame like screenshot */
+.outerFrame {
+  width: 100%;
+  max-width: 1400px;
+  border: 1px solid rgba(255,255,255,0.9);
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25));
+  /* border-radius: 12px; */
+}
+
+/* Top progress small rounded badge */
+.progressBadge {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255,255,255,0.95);
+  color: #111;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 10px;
+  z-index: 30;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+  font-size: 0.9rem;
+}
+
+/* Main voting container: two big panels with center divider */
+.votingContainer {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+  height: 420px;
+}
+
+/* Each side (left / right) */
+.votingSide {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+/* Car image container */
+.carImage {
+  width: 100%;
+  height: 100%;
+  max-height: 420px;
+  position: relative;
+  border-right: none;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.25s;
+}
+
+.carImage:hover {
+  transform: scale(1.01);
+}
+
+/* Car image tag styling */
+.carImageTag {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background-color: #1a1a1a; /* Fallback color while loading */
+}
+
+/* hovered style thins border glow to green */
+.hovered {
+  box-shadow: inset 0 0 60px rgba(22,163,74,0.12), 0 8px 40px rgba(0,0,0,0.6);
+}
+
+/* overlay dark mask for readable text when needed */
+.hoverOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  /* cursor: pointer; */
+}
+
+/* thumbs circle */
+.thumbsContainer {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+.thumbsIcon {
+  color: #111;
+  font-size: 42px;
+}
+
+/* car name below image */
+.carName {
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 25;
+  background: rgba(0,0,0,0.25);
+  padding: 8px 14px;
+  border-radius: 4px;
+  font-size: 1.1rem;
+}
+
+/* center area = vertical divider and controls */
+.centerArea {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 40;
+}
+
+/* vertical divider line */
+.centerArea::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20px;
+  bottom: 20px;
+  width: 2px;
+  background: rgba(255,255,255,0.15);
+  pointer-events: none;
+}
+
+/* equal circular button in center */
+.equalButton {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #fff;
+  color: #222;
+  font-size: 28px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.equalButton:hover {
+  transform: scale(1.05);
+}
+
+/* skip pill fixed bottom center overlapping frame */
+.skipPill {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 45;
+}
+
+.skipBtn {
+  background: #fff;
+  color: #111;
+  padding: 8px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(0,0,0,0.15);
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.45);
+  transition: all 0.2s ease;
+}
+
+.skipBtn:hover {
+  background: #f0f0f0;
+  transform: translateY(-1px);
+}
+
+/* bottom-right small angle toggle */
+.votingAngle {
+  position: absolute;
+  right: 18px;
+  bottom: 14px;
+  display: flex;
+  gap: 12px;
+  z-index: 60;
+  background: rgba(0,0,0,0.45);
+  padding: 8px 12px;
+  border-radius: 30px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* radio custom */
+.angleOption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.angleOption:hover {
+  opacity: 0.8;
+}
+
+.angleOption input {
+  display: none;
+}
+
+.radioCustom {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.3);
+  display: inline-block;
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+.angleOption input:checked + .radioCustom {
+  background: rgba(220,38,38,0.95);
+  border-color: rgba(220,38,38,0.95);
+}
+
+/* Results grid */
+.resultGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 80px 80px;
+  align-items: center;
+}
+
+/* result card visual: centered small white box with avatar and rating */
+.resultCard {
+  border: 2px solid rgba(255,255,255,0.6);
+  padding: 40px;
+  background: rgba(0,0,0,0.45);
+  color: #fff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.votedCard {
+  border-color: rgba(22,163,74,0.95);
+  box-shadow: 0 16px 40px rgba(22,163,74,0.12);
+}
+
+.youVotedBadge {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1f9bb8;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 800;
+  z-index: 20;
+  font-size: 0.8rem;
+}
+
+/* user info inside result card */
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.userImageContainer {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255,255,255,0.85);
+  background: #fff;
+}
+
+.userImageContainer img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.userName {
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.star {
+  color: rgba(255,255,255,0.25);
+  font-size: 18px;
+}
+
+.filledStar {
+  color: #fbbf24;
+}
+
+.ratingValue {
+  font-weight: 900;
+  font-size: 28px;
+  color: #fff;
+}
+
+/* Result footer */
+.resultFooter {
+  display: flex;
+  justify-content: center;
+  /* padding: 24px; */
+  gap: 12px;
+}
+
+.nextButton {
+  background: #dc2626;
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 6px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  transition: all 0.2s ease;
+  font-size: 1rem;
+}
+
+.nextButton:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+}
+
+/* Completed text */
+.completedText {
+  color: #16a34a;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+
+/* ===== MOBILE RESPONSIVE STYLES ===== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .votingChallenge {
+    padding: 1rem;
+    min-height: 70vh;
+  }
+  
+  .votingContainer {
+    height: 380px;
+  }
+  
+  .carImage {
+    max-height: 380px;
+  }
+  
+  .carImageTag {
+    object-fit: cover;
+  }
+  
+  .thumbsContainer {
+    width: 90px;
+    height: 90px;
+  }
+  
+  .thumbsIcon {
+    font-size: 36px;
+  }
+  
+  .resultGrid {
+    padding: 60px 40px;
+    gap: 30px;
+  }
+  
+  .resultCard {
+    padding: 30px;
+    min-height: 220px;
+  }
+}
+
+/* Mobile Landscape / Small Tablet */
+
+/* For ≤768px screens */
+@media (max-width: 768px) {
+  .votingChallenge {
+    padding: 0.5rem;
+    min-height: auto; /* remove unnecessary min height */
+  }
+
+  .outerFrame {
+    border: 1px solid rgba(255,255,255,0.6);
+    min-height: auto;
+  }
+
+  .votingContainer {
+    flex-direction: column;
+    height: auto;
+    gap: 5px; /* small gap between blocks */
+  }
+
+  .carImage {
+    max-height: 200px;
+    border: none; /* prevent extra border on stacking */
+  }
+
+  .carName {
+    margin: 6px auto;
+    text-align: center;
+    font-size: 0.95rem;
+    padding: 4px 10px;
+    background: rgba(0,0,0,0.45);
+    display: inline-block;
+  }
+
+  /* Center controls better aligned */
+  .centerArea {
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    gap: 14px;
+    position: static;
+  }
+
+  .centerArea::before {
+    display: none; 
+  }
+
+  .equalButton {
+    width: 46px;
+    height: 46px;
+    font-size: 20px;
+  }
+
+  .skipPill {
+    margin: 0;
+    order: 2;
+  }
+
+  .votingAngle {
+    margin: 10px auto 0;
+    padding: 6px 12px;
+    gap: 10px;
+  }
+
+  /* Results spacing tighter */
+  .resultGrid {
+    grid-template-columns: 1fr;
+    padding: 20px 12px;
+    gap: 16px;
+  }
+
+  .resultCard {
+    padding: 18px;
+    min-height: 160px;
+  }
+
+  .userImageContainer {
+    width: 65px;
+    height: 65px;
+  }
+
+  .userName {
+    font-size: 1rem;
+  }
+
+  .ratingValue {
+    font-size: 22px;
+  }
+
+  .nextButton {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Mobile Portrait */
+@media (max-width: 480px) {
+  .votingChallenge {
+    padding: 0.25rem;
+    /* min-height: 100vh; */
+  }
+  
+  .outerFrame {
+    border-width: 1px;
+    /* min-height: 90vh; */
+  }
+
+  .youVotedBadge {
+    font-size: 0.7rem;
+    padding: 6px 10px;
+  }
+  .carImage {
+    max-height: 200px;
+  }
+  
+  .carImageTag {
+    object-fit: cover;
+  }
+  
+  .thumbsContainer {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .thumbsIcon {
+    font-size: 28px;
+  }
+  
+  .carName {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+  
+  .centerArea {
+    gap: 15px;
+  }
+  
+  .equalButton {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+  
+  .skipBtn {
+    padding: 5px 14px;
+    font-size: 0.8rem;
+  }
+  
+  .votingAngle {
+    bottom: 130px;
+    padding: 6px 10px;
+    gap: 10px;
+  }
+  
+  .angleOption {
+    font-size: 11px;
+  }
+  
+  .progressBadge {
+    padding: 4px 8px;
+    font-size: 0.75rem;
+  }
+  
+  .resultGrid {
+    padding: 30px 15px;
+    gap: 15px;
+  }
+  
+  .resultCard {
+    padding: 20px;
+    min-height: 180px;
+  }
+  
+  .userInfo {
+    gap: 10px;
+  }
+  
+  .userImageContainer {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .userName {
+    font-size: 1rem;
+  }
+  
+  .star {
+    font-size: 16px;
+  }
+  
+  .ratingValue {
+    font-size: 20px;
+  }
+  
+  .nextButton {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+  
+  .completedText {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+/* Touch Device Improvements */
+@media (hover: none) and (pointer: coarse) {
+  .carImage:hover {
+    transform: none;
+  }
+  
+  .carImage:active {
+    transform: scale(0.98);
+  }
+  
+  .equalButton:hover {
+    transform: none;
+  }
+  
+  .equalButton:active {
+    transform: scale(0.95);
+  }
+  
+  .skipBtn:hover {
+    transform: none;
+    background: #fff;
+  }
+  
+  .skipBtn:active {
+    transform: scale(0.95);
+    background: #f0f0f0;
+  }
+  
+  .nextButton:hover {
+    transform: none;
+  }
+  
+  .nextButton:active {
+    transform: scale(0.95);
+  }
+}
+
+/* Image optimization for all devices */
+.carImageTag {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+/* Ensure images are always visible */
+@media (max-width: 768px) {
+  .carImageTag {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+  }
+}
+
+

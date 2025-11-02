@@ -1,0 +1,215 @@
+.settingsSection {
+  background: #000;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1.5rem;
+  color: #fff;
+  position: relative;
+    overflow: hidden;
+      /* Ensure content stays above gradients */
+  isolation: isolate; /* Creates new stacking context */
+}
+
+/* All gradient elements */
+.gradientTopLeft,
+.gradientTopRight,
+.gradientBottomLeft,
+.gradientBottomRight,
+.gradientCenter {
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1; /* Place behind all content */
+  pointer-events: none; /* Allow clicks to pass through */
+}
+
+/* Individual gradients */
+.gradientTopLeft {
+  top: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(195, 162, 113, 0.2) 0%,
+    rgba(195, 162, 113, 0) 70%
+  );
+}
+
+.gradientTopRight {
+  top: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(195, 162, 113, 0.15) 0%,
+    rgba(195, 162, 113, 0) 70%
+  );
+}
+
+.gradientBottomLeft {
+  bottom: -100px;
+  left: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(195, 162, 113, 0.22) 0%,
+    rgba(195, 162, 113, 0) 70%
+  );
+}
+
+.gradientBottomRight {
+  bottom: -100px;
+  right: -100px;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(
+    circle,
+    rgba(195, 162, 113, 0.21) 0%,
+    rgba(195, 162, 113, 0) 70%
+  );
+}
+
+.gradientCenter {
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(195, 162, 113, 0.08) 0%,
+    rgba(195, 162, 113, 0) 80%
+  );
+}
+
+.heading {
+  /* font-size: 2rem; */
+  font-weight: bold;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+
+.profileWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.profileImage {
+  border-radius: 50%;
+}
+
+.username {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.form {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.label {
+  font-weight: 500;
+  margin-bottom: -0.5rem;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  padding: 0.8rem 2.5rem 0.8rem 1rem;
+  border-radius: 6px;
+  border: none;
+  background: #1f1f1f;
+  color: #fff;
+}
+
+.input:focus {
+  outline: 1px solid #c6a25d;
+}
+
+.icon {
+  position: absolute;
+  right: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #ccc;
+  cursor: pointer;
+}
+
+.fileInput {
+  padding: 0.5rem;
+  background: #1f1f1f;
+  color: #fff;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+    font-size: 0.9rem;
+}
+
+
+
+/* Browser-specific styling for file input */
+.fileInput::-webkit-file-upload-button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.fileInput::file-selector-button {
+  background: #333;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+.saveButton {
+  margin-top: 1.5rem;
+  background: transparent;
+  border: 1.5px solid #c6a25d;
+  color: #c6a25d;
+  font-weight: bold;
+  padding: 0.8rem 1.5rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.saveButton:hover {
+  background: #c6a25d;
+  color: #000;
+}
+
+.lockIcon {
+  font-size: 1rem;
+}
+
+
+
+
+
+
+

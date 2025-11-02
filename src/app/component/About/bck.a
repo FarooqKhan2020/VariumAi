@@ -1,0 +1,75 @@
+
+
+.aboutPage {
+  min-height: 100vh;
+  background-color: #000; /* Base black */
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+
+  
+/* Individual gradients */
+.gradientTopLeft {
+  top: -100px;
+  left: -100px;
+  background: radial-gradient(
+    circle,
+    rgba(195, 162, 113, 0.2) 0%,
+    rgba(195, 162, 113, 0) 70%
+  );
+}
+
+.gradientTopRight {
+  top: -100px;
+  right: -100px;
+  background: radial-gradient(
+    circle,
+    rgba(195, 162, 113, 0.15) 0%,
+    rgba(195, 162, 113, 0) 70%
+  );
+}
+
+.gradientBottomLeft {
+  bottom: -100px;
+  left: -100px;
+  background: radial-gradient(
+    circle,
+    rgba(195, 162, 113, 0.12) 0%,
+    rgba(195, 162, 113, 0) 70%
+  );
+}
+
+.gradientBottomRight {
+  bottom: -100px;
+  right: -100px;
+  background: radial-gradient(
+    circle,
+    rgba(195, 162, 113, 0.1) 0%,
+    rgba(195, 162, 113, 0) 70%
+  );
+}
+
+.gradientCenter {
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(
+    circle,
+    rgba(195, 162, 113, 0.08) 0%,
+    rgba(195, 162, 113, 0) 80%
+  );
+}
+
+
+
+
+ {/* Gradient Background Effects */}
+  <div className={styles.gradientTopLeft}></div>
+  <div className={styles.gradientTopRight}></div>
+  <div className={styles.gradientBottomLeft}></div>
+  <div className={styles.gradientBottomRight}></div>
+  <div className={styles.gradientCenter}></div>

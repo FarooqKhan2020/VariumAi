@@ -1,0 +1,196 @@
+.myDesignSection {
+  width: 100%;
+  background: #000;
+  padding: 2rem 0;
+
+}
+
+.myDesignWrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+}
+
+/* Navigation Arrows */
+.navArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: #dc2626;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+.leftArrow { left: -20px; }
+.rightArrow { right: -20px; }
+.disabled { background: #4b5563; cursor: not-allowed; }
+
+/* Slider Container */
+.challengeGridContainer {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 -1px; /* Remove potential edge gaps */
+}
+
+.challengeSlider {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+   gap: 0;
+}
+
+.challengeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.5rem;
+  min-width: 100%;
+    padding: 0 1px; /* Small padding to prevent edge lines */
+  box-sizing: border-box;
+   padding: 0 1rem;
+}
+
+/* Challenge Card */
+.challengeCard {
+  background: #0f0f0f;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  border: 1px solid #fff;
+  height: fit-content;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
+.challengeImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.challengeCard:hover .challengeImage {
+  transform: scale(1.05);
+}
+
+/* Labels */
+.titleLabel {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(0, 0, 0, .7);
+  color: white;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+
+.statusLabel {
+  position: absolute;
+  top: 60px;
+  left: 15px;
+   background: #267596;
+  color: white;
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(30,144,255,0.4);
+}
+.statusIcon { font-size: 0.9rem; }
+
+.goneLabel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  background: rgba(220, 38, 38, 0.95);
+  color: white;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  box-shadow: 0 5px 20px rgba(220, 38, 38, 0.6);
+  border: 3px solid white;
+  backdrop-filter: blur(5px);
+}
+
+/* Dots */
+.dotsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4b5563;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.activeDot {
+  background: #dc2626;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(220,38,38,0.5);
+}
+
+@media (max-width: 768px) {
+  .challengeGrid {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+  .dotsContainer {
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+  }
+  .navArrow{
+    /* top: 40%; */
+  }
+}
+
+@media (max-width: 480px) {
+    .myDesignSection{
+        padding: 1rem 0;
+    }
+  .imageContainer{
+    height: 200px;
+  }
+  .navArrow {
+     width: 32px;
+     height: 32px;
+     font-size: .9rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .imageContainer {
+    height: 180px;
+  }
+}

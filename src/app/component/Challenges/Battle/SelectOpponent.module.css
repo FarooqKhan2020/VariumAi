@@ -1,0 +1,107 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup {
+  background: #fff;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  background: #0062ff;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  gap: 10px;
+}
+
+.searchInput {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.randomBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #004bcc;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.closeIcon {
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.body {
+  background: #f9f9f9;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 20px;
+  overflow-y: auto;
+}
+
+.friendCard {
+  text-align: center;
+  position: relative;
+}
+
+.avatarWrapper {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.rating {
+  position: absolute;
+  bottom: -5px;
+  right: -5px;
+  background: #ffa500;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 12px;
+  padding: 3px 6px;
+  font-weight: 600;
+}
+
+.name {
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}

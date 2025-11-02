@@ -1,0 +1,152 @@
+.leaderboardSection {
+  width: 100%;
+  background: #000;
+  padding: 2rem 0;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.carsSliderWrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.sliderArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: #dc2626;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.sliderArrow:hover {
+  background: #b91c1c;
+}
+
+.sliderArrow:disabled {
+  background: #4b5563;
+  cursor: not-allowed;
+}
+
+.sliderArrow.left {
+  left: -20px;
+}
+
+.sliderArrow.right {
+  right: -20px;
+}
+
+.carsSliderContainer {
+  overflow: hidden;
+}
+
+.carsSlider {
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carSlide {
+  flex-shrink: 0;
+  padding: 0 0.5rem;
+}
+
+.carCard {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+  border: 1px solid #333;
+}
+
+.carImage {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+.carLabels {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.topDesignLabel {
+  background: #ff9500;
+  padding: 0.25rem 0.75rem;
+  font-weight: bold;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: #000;
+  letter-spacing: 0.5px;
+}
+
+.carTitleLabel {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 0.5rem 0.75rem;
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.viewBtn {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  padding: 0.5rem 2rem;
+  border-radius: 50px;
+  border: 2px solid white;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  font-weight: bold;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.viewBtn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .carImage {
+    height: 320px;
+  }
+}
+
+@media (max-width: 640px) {
+  .carImage {
+    height: 250px;
+  }
+
+  .sliderArrow {
+    width: 32px;
+    height: 32px;
+  }
+
+  .viewBtn {
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+  }
+}

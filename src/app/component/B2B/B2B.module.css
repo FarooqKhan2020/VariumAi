@@ -1,0 +1,131 @@
+.page {
+  min-height: 100vh;
+  font-family: 'Ubuntu', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 60vh; /* thoda kam since text only */
+  display: flex;
+  /* align-items: center; */
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.heroText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 900px;
+}
+
+.heroTitle {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: bold;
+  line-height: 1.2;
+  font-family: 'Montserrat', sans-serif;
+  font-style: italic;
+}
+
+.heroSubtitle {
+  font-style: italic;
+}
+
+.heroDescription {
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+/* Image Section (new) */
+.imageSection {
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageWrapper {
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.imageGlow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(195, 162, 113, 0.4) 0%,
+    rgba(195, 162, 113, 0) 70%
+  );
+  filter: blur(120px);
+  z-index: 0; /* glow behind */
+}
+
+.b2bImage {
+    position: relative;
+  z-index: 1; 
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* Terms Section */
+.terms {
+  padding: 4rem 0rem;
+  padding-bottom: 0rem;
+}
+
+.termsContainer {
+  margin: 0 auto;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.section:last-child {
+  margin-bottom: 0rem;
+}
+
+.heading {
+  font-size: 1.75rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.paragraphs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.list {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 480px) {
+  .section {
+    margin-bottom: 1rem;
+  }
+  .heading {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+}

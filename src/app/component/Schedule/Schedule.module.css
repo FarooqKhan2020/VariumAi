@@ -1,0 +1,317 @@
+/* Schedule.module.css */
+.scheduleContainer {
+  min-height: 100vh;
+  background-color: #000;
+  color: #fff;
+}
+
+/* Voting Header */
+.votingHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.modelsCount span {
+  font-size: 18px;
+  color: #fff;
+}
+
+.tabsContainer {
+  display: flex;
+  gap: 4px;
+}
+
+.tabButton {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.tabActive {
+  background-color: #fff;
+  color: #000;
+}
+
+.tabInactive {
+  background-color: #1f2937;
+  color: #fff;
+  border: 1px solid #4b5563;
+}
+
+.tabInactive:hover {
+  background-color: #374151;
+}
+
+/* Filters Section */
+.filtersSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.filterButtons {
+  display: flex;
+  gap: 24px;
+}
+
+.filterButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+
+.filterActive {
+  color: #fff;
+}
+
+.filterInactive {
+  color: #9ca3af;
+}
+
+.filterInactive:hover {
+  color: #fff;
+}
+
+.dropdownArrow {
+  font-size: 18px;
+}
+
+.searchContainer {
+  position: relative;
+  width: 384px;
+}
+
+.searchInput {
+  width: 100%;
+  background-color: #111827;
+  border: 1px solid #4b5563;
+  border-radius: 6px;
+  padding: 8px 16px 8px 40px;
+  color: #fff;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #9ca3af;
+}
+
+.searchInput::placeholder {
+  color: #9ca3af;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 16px;
+  width: 16px;
+  color: #9ca3af;
+}
+
+/* Cars Grid - Mobile First (1 column) */
+.carsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+/* Tablet styles (up to 1023px) */
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .carsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop styles (1024px and above) */
+@media screen and (min-width: 1024px) {
+  .carsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Alternative max-width only approach */
+/* 
+@media screen and (max-width: 767px) {
+  .carsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px) {
+  .carsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .carsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+*/
+
+.carCard {
+  position: relative;
+}
+
+.cardImageContainer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.carImage {
+  width: 100%;
+  height: 192px;
+  background-size: cover;
+  background-position: center;
+}
+
+.statusLabel {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.labelRed {
+  background-color: #ef4444;
+}
+
+.labelYellow {
+  background-color: #eab308;
+}
+
+.labelGreen {
+  background-color: #22c55e;
+}
+
+.likeButton {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Note: CSS Modules don't support :not() with global classes well */
+.likeButtonDefault {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #d1d5db;
+}
+
+.likeButtonDefault:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.liked {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+}
+
+.thumbsIcon {
+  height: 16px;
+  width: 16px;
+}
+
+.iconLiked {
+  fill: #fff;
+}
+
+.likesCounter {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  margin-top: 32px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.carInfo {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 12px;
+}
+
+.carDetails {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.carId {
+  color: #d1d5db;
+}
+
+.carName {
+  margin-left: 8px;
+}
+
+/* No Cars Message */
+.noCarsMessage {
+  text-align: center;
+  color: #9ca3af;
+  margin-top: 48px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 767px) {
+  .votingHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .filtersSection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  
+  .searchContainer {
+    width: 100%;
+  }
+  
+  .tabsContainer {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .filterButtons {
+    gap: 16px;
+  }
+  
+  .tabButton {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+  
+  .carImage {
+    height: 160px;
+  }
+}

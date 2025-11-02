@@ -1,0 +1,121 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup {
+  background: #111;
+  border: 1px solid #fff;
+  width: 420px;
+  color: #fff;
+  text-align: center;
+  /* padding: 25px 30px; */
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+.starIcon {
+  color: gold;
+}
+
+.diamondIcon {
+  color: #60a5fa;
+}
+
+.keyIcon {
+  color: #34d399;
+}
+
+.starIcon, .diamondIcon, .keyIcon {
+  font-size: 28px;
+  position: absolute;
+  left: 20px;
+  top: 13px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.body {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #ddd;
+  padding: 0 15px;
+  margin-bottom: 15px;
+}
+
+.seasonText {
+  margin: 15px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  padding-bottom: 15px;
+}
+
+.goButton {
+  background-image: linear-gradient(to top, #04609f 0, #133559 40%, #133559 50%, #133559 60%, #04609f 100%);
+  border: 2px solid #0aa5df;
+  color: white;
+  transition: all 0.3s ease;
+  padding: 8px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+
+.goButton {
+    background-image: linear-gradient(to top, #04609f 0, #133559 40%, #133559 50%, #133559 60%, #04609f 100%);
+    border: 2px solid #0aa5df;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.goButton:hover {
+  background-image: linear-gradient(to top, #058bda 0, #165a8c 40%, #165a8c 50%, #165a8c 60%, #058bda 100%);
+  border: 2px solid #0ed3ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(14, 211, 255, 0.3);
+}
+
+.closeButton {
+  background-image: linear-gradient(to top, #525252 0, #0c1218 40%, #0c1218 50%, #0c1218 60%, #525252 100%);
+  border: 2px solid #aeaeae;
+  color: white;
+  transition: all 0.3s ease;
+  padding: 8px 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.closeButton:hover {
+  background-image: linear-gradient(to top, #6b6b6b 0, #161e25 40%, #161e25 50%, #161e25 60%, #6b6b6b 100%);
+  border: 2px solid #e0e0e0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(224, 224, 224, 0.25);
+}
+
+

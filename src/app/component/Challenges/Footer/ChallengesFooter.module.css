@@ -1,0 +1,25 @@
+.challengesfooter {
+  background-color: #000;
+  padding: 12px;
+}
+
+.challengesnavContainer {
+  display: flex;
+  justify-content: space-around;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.5rem; /* text-2xl */
+}
+
+.challengesnavItem {
+  color: #6b7280; /* gray-500 */
+  transition: color 0.2s ease;
+}
+
+.challengesnavItem:hover {
+  color: #d1d5db; /* gray-300 hover */
+}
+
+.challengesactive {
+  color: #fff;
+}

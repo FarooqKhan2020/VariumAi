@@ -1,0 +1,690 @@
+.carShowroomSection {
+  width: 100%;
+  background: #000;
+  padding: 2rem 0;
+  min-height: 100vh;
+}
+
+.carShowroomWrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.navArrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: #dc2626;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.navArrow:hover {
+  background: #b91c1c;
+}
+
+.navArrow:disabled {
+  background: #4b5563;
+  cursor: not-allowed;
+  transform: translateY(-50%);
+}
+
+.navArrow:disabled:hover {
+  transform: translateY(-50%);
+}
+
+.leftArrow {
+  left: -20px;
+}
+
+.rightArrow {
+  right: -20px;
+}
+
+.carGridContainer {
+  padding: 0 1rem;
+}
+
+.carGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.carGrid.mobileGrid {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  gap: 1rem;
+  padding: 0.5rem;
+}
+
+.carCard {
+  background: #0f0f0f;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #fff;
+}
+
+.carImageContainer {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+}
+
+.carImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .4s ease;
+}
+
+.carCard:hover .carImage {
+  transform: scale(1.08);
+}
+
+/* Challenge Label */
+.challengeLabel {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(4px);
+}
+
+/* Status Label */
+.statusLabel {
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  backdrop-filter: blur(4px);
+}
+
+.statusIcon {
+  font-size: 0.7rem;
+  color: #f59e0b;
+}
+
+/* Gone to Challenge Label */
+.goneToChallengeLabel {
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(220, 38, 38, 0.9);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  backdrop-filter: blur(4px);
+}
+
+.challengeIcon {
+  font-size: 0.7rem;
+}
+
+/* Rating Badge */
+.ratingContainer {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: white;
+  color: #333;
+  padding: 0.25rem 0.6rem;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.starIcon {
+  color: #f59e0b;
+  margin-right: 4px;
+}
+
+/* Bottom Overlay User Info */
+.userInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  display: flex;
+  align-items: center;
+  background: rgba(0,0,0,0.65);
+  backdrop-filter: blur(6px);
+}
+
+.userAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid white;
+  margin-right: 0.6rem;
+}
+
+.userName {
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.dotsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4b5563;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.dot:hover {
+  background: #9ca3af;
+  transform: scale(1.2);
+}
+
+.activeDot {
+  background: #dc2626;
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
+}
+
+.activeDot:hover {
+  background: #dc2626;
+}
+
+/* Tablet Responsive */
+@media (max-width: 1024px) {
+  .carGrid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+  
+  .carImageContainer {
+    height: 180px;
+  }
+  
+  .carShowroomWrapper {
+    padding: 0 1rem;
+  }
+  
+  .carGridContainer {
+    padding: 0 0.5rem;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .carShowroomSection {
+    padding: 1.5rem 0;
+  }
+  
+  .carGrid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .carImageContainer {
+    height: 220px;
+  }
+  
+  .carShowroomWrapper {
+    padding: 0 0.5rem;
+  }
+  
+  .carGridContainer {
+    padding: 0;
+  }
+  
+  .navArrow {
+    font-size: 1rem;
+    top: 40%;
+  }
+  
+  .carCard {
+    margin: 0 0.25rem;
+  }
+  
+  .challengeLabel {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+  }
+  
+  .statusLabel {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.7rem;
+  }
+  
+  .goneToChallengeLabel {
+    font-size: 0.7rem;
+    padding: 0.25rem 0.7rem;
+  }
+  
+  .ratingContainer {
+    padding: 0.4rem 0.6rem;
+  }
+  
+  .starIcon {
+    font-size: 0.8rem;
+  }
+  
+  .userInfo {
+    padding: 0.875rem;
+    gap: 0.625rem;
+  }
+  
+  .userAvatar {
+    width: 34px;
+    height: 34px;
+  }
+  
+  .userName {
+    font-size: 0.85rem;
+  }
+  
+  .dotsContainer {
+    margin-top: 1.5rem;
+    gap: 0.5rem;
+  }
+  
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .carShowroomSection {
+    padding: 1rem 0;
+  }
+  
+  .carImageContainer {
+    height: 200px;
+  }
+  
+  .navArrow {
+    width: 32px;
+    height: 32px;
+    font-size: 0.9rem;
+  }
+  
+  .challengeLabel {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+  }
+  
+  .statusLabel {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .goneToChallengeLabel {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+  }
+  
+  .ratingContainer {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.8rem;
+  }
+  
+  .userInfo {
+    padding: 0.75rem;
+  }
+  
+  .userAvatar {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .userName {
+    font-size: 0.8rem;
+  }
+  
+  .dotsContainer {
+    margin-top: 1rem;
+  }
+}
+
+/* Extra Small Devices */
+@media (max-width: 360px) {
+  .carImageContainer {
+    height: 180px;
+  }
+  
+  .userInfo {
+    padding: 0.625rem;
+  }
+  
+  .userAvatar {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .userName {
+    font-size: 0.75rem;
+  }
+}
+
+/* Touch Device Improvements */
+@media (hover: none) and (pointer: coarse) {
+  .carCard:hover {
+    transform: none;
+  }
+  
+  .carCard:active {
+    transform: scale(0.98);
+  }
+  
+  .navArrow {
+    background: #dc2626;
+  }
+  
+  .navArrow:active {
+    background: #b91c1c;
+    transform: translateY(-50%) scale(0.95);
+  }
+}
+
+
+
+"use client";
+import React, { useState, useEffect } from "react";
+import { FaChevronLeft, FaChevronRight, FaStar, FaClock, FaFlag } from "react-icons/fa";
+import styles from "./CarShowroom.module.css";
+
+const carsData = [
+  // First 6 cars with labels
+  { 
+    id: 1, 
+    rating: 4.68, 
+    name: "Ancium", 
+    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=400&h=300&fit=crop", 
+    avatar: "https://i.pravatar.cc/40?img=1",
+    challengeLabel: "RACE INSPIRED",
+    statusLabel: "1 DAY",
+    hasGoneToChallenge: false
+  },
+  { 
+    id: 2, 
+    rating: 4.38, 
+    name: "Lunkas Miseripää", 
+    image: "https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=400&h=300&fit=crop", 
+    avatar: "https://i.pravatar.cc/40?img=2",
+    challengeLabel: "LIVERY",
+    statusLabel: "1 DAY",
+    hasGoneToChallenge: true
+  },
+  { 
+    id: 3, 
+    rating: 4.38, 
+    name: "Cotton_17", 
+    image: "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=400&h=300&fit=crop", 
+    avatar: "https://i.pravatar.cc/40?img=3",
+    challengeLabel: "FERRARI",
+    statusLabel: "1 DAY",
+    hasGoneToChallenge: false
+  },
+  { 
+    id: 4, 
+    rating: 4.38, 
+    name: "Shot_26", 
+    image: "https://images.unsplash.com/photo-1571607388263-1044f9ea01dd?w=400&h=300&fit=crop", 
+    avatar: "https://i.pravatar.cc/40?img=4",
+    challengeLabel: "FREESTYLE",
+    statusLabel: "6 HOUR",
+    hasGoneToChallenge: true
+  },
+  { 
+    id: 5, 
+    rating: 4.38, 
+    name: "Steven.mr.tz", 
+    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
+    avatar: "https://i.pravatar.cc/40?img=5",
+    challengeLabel: "RACE INSPIRED",
+    statusLabel: "1 DAY",
+    hasGoneToChallenge: false
+  },
+  { 
+    id: 6, 
+    rating: 4.5, 
+    name: "Cotton_21", 
+    image: "https://images.unsplash.com/photo-1635975229704-0a420e777a56?q=80&w=1946&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", 
+    avatar: "https://i.pravatar.cc/40?img=6",
+    challengeLabel: "LIVERY",
+    statusLabel: "6 HOUR",
+    hasGoneToChallenge: true
+  },
+  // Next 6 cars
+  { 
+    id: 7, 
+    rating: 4.72, 
+    name: "TunerPro", 
+    image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400&h=300&fit=crop", 
+    avatar: "https://i.pravatar.cc/40?img=7",
+    challengeLabel: "FERRARI",
+    statusLabel: "1 DAY",
+    hasGoneToChallenge: false
+  },
+  { 
+    id: 8, 
+    rating: 4.45, 
+    name: "SpeedMaster", 
+    image: "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=400&h=300&fit=crop", 
+    avatar: "https://i.pravatar.cc/40?img=8",
+    challengeLabel: "FREESTYLE",
+    statusLabel: "1 DAY",
+    hasGoneToChallenge: true
+  },
+  { 
+    id: 9, 
+    rating: 4.60, 
+    name: "DriftKing", 
+    image: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=400&h=300&fit=crop", 
+    avatar: "https://i.pravatar.cc/40?img=9",
+    challengeLabel: "RACE INSPIRED",
+    statusLabel: "6 HOUR",
+    hasGoneToChallenge: false
+  },
+  { 
+    id: 10, 
+    rating: 4.33, 
+    name: "GearHead", 
+    image: "https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=400&h=300&fit=crop", 
+    avatar: "https://i.pravatar.cc/40?img=10",
+    challengeLabel: "LIVERY",
+    statusLabel: "1 DAY",
+    hasGoneToChallenge: true
+  },
+  { 
+    id: 11, 
+    rating: 4.55, 
+    name: "TurboBoost", 
+    image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=400&h=300&fit=crop", 
+    avatar: "https://i.pravatar.cc/40?img=11",
+    challengeLabel: "FERRARI",
+    statusLabel: "6 HOUR",
+    hasGoneToChallenge: false
+  },
+  { 
+    id: 12, 
+    rating: 4.42, 
+    name: "RacerX", 
+    image: "https://images.unsplash.com/photo-1669882571567-76346139f1f1?q=80&w=1169&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    challengeLabel: "FREESTYLE",
+    statusLabel: "1 DAY",
+    hasGoneToChallenge: true
+  },
+];
+
+const CarShowroom = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const totalSlides = Math.ceil(carsData.length / (isMobile ? 2 : 6));
+  const maxSlide = Math.max(0, totalSlides - 1);
+
+  const nextSlide = () => setCurrentSlide((p) => Math.min(p + 1, maxSlide));
+  const prevSlide = () => setCurrentSlide((p) => Math.max(p - 1, 0));
+
+  const getCurrentCars = () => {
+    const carsPerSlide = isMobile ? 2 : 6;
+    const startIndex = currentSlide * carsPerSlide;
+    return carsData.slice(startIndex, startIndex + carsPerSlide);
+  };
+
+  const currentCars = getCurrentCars();
+
+  return (
+    <section className={styles.carShowroomSection}>
+      <div className={styles.carShowroomWrapper}>
+        {/* Navigation Arrows - Only show if not on mobile or if there are multiple slides */}
+        {(!isMobile || totalSlides > 1) && (
+          <>
+            <button
+              onClick={prevSlide}
+              disabled={currentSlide === 0}
+              className={`${styles.navArrow} ${styles.leftArrow}`}
+            >
+              <FaChevronLeft />
+            </button>
+            
+            <button
+              onClick={nextSlide}
+              disabled={currentSlide >= maxSlide}
+              className={`${styles.navArrow} ${styles.rightArrow}`}
+            >
+              <FaChevronRight />
+            </button>
+          </>
+        )}
+
+        {/* Car Grid */}
+        <div className={styles.carGridContainer}>
+          <div className={`${styles.carGrid} ${isMobile ? styles.mobileGrid : ''}`}>
+            {currentCars.map((car) => (
+              <div key={car.id} className={styles.carCard}>
+                <div className={styles.carImageContainer}>
+                  <img src={car.image} alt={car.name} className={styles.carImage} />
+
+                  {/* Challenge Label */}
+                  <div className={styles.challengeLabel}>
+                    {car.challengeLabel}
+                  </div>
+
+                  {/* Status Label */}
+                  <div className={styles.statusLabel}>
+                    <FaClock className={styles.statusIcon} />
+                    <span>{car.statusLabel}</span>
+                  </div>
+
+                  {/* Gone to Challenge Label - Only show if hasGoneToChallenge is true */}
+                  {car.hasGoneToChallenge && (
+                    <div className={styles.goneToChallengeLabel}>
+                      <FaFlag className={styles.challengeIcon} />
+                      <span>GONE TO CHALLENGE</span>
+                    </div>
+                  )}
+
+                  {/* Rating Badge */}
+                  <div className={styles.ratingContainer}>
+                    <FaStar className={styles.starIcon} />
+                    <span>{car.rating}</span>
+                  </div>
+
+                  {/* User Info Overlay */}
+                  <div className={styles.userInfo}>
+                    <img src={car.avatar} alt={car.name} className={styles.userAvatar} />
+                    <span className={styles.userName}>{car.name}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Slide Dots Indicator - Show only if multiple slides */}
+        {totalSlides > 1 && (
+          <div className={styles.dotsContainer}>
+            {Array.from({ length: totalSlides }).map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`${styles.dot} ${index === currentSlide ? styles.activeDot : ""}`}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default CarShowroom;

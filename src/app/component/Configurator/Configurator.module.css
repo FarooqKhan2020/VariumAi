@@ -1,0 +1,332 @@
+.configurator {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* First Section Styles */
+.titleSection {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.titleSection h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.searchInput {
+  padding: 8px 15px 8px 40px; /* Added left padding for icon */
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: calc(50% - 150px + 12px); /* Center alignment calculation */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  pointer-events: none; /* Make icon non-interactive */
+}
+
+/* Second Section Styles */
+.typeSection {
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.typeTabsContainer {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.scrollButton {
+  /* border: 1px solid #ddd; */
+  width: 40px;
+  height: 40px;
+  /* border-radius: 100%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.scrollButton svg {
+  font-size: 20px;  
+}
+
+
+.typeTabs {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.typeTabs::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
+.typeTab {
+  padding: 10px 15px;
+  white-space: nowrap;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  border-bottom: 3px solid transparent;
+}
+
+.typeTab:hover {
+  border-bottom: 3px solid #a70000;
+}
+
+.typeTab.active {
+  border-bottom: 3px solid #a70000;
+  color: #a70000;
+}
+
+/* Third Section Styles */
+.modelsSection {
+  display: flex;
+  gap: 20px;
+  height: 600px; /* Fixed height as requested */
+}
+
+.brandsContainer {
+  width: 150px;
+  position: relative;
+  border: 1px solid #ddd;
+  overflow: hidden;
+}
+
+.brandsList {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none; /* Hide default Firefox scrollbar */
+  -ms-overflow-style: none; /* Hide IE/Edge scrollbar */
+}
+
+.brandsList::-webkit-scrollbar {
+  display: none; /* Hide Chrome/Safari scrollbar */
+}
+
+.brandItem {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.brandItem:hover {
+  background-color: #f9f9f9;
+  color: #000;
+}
+
+.brandItem.active {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.brandLogo {
+  width: 100%;
+  height: 50px;
+  object-fit: contain;
+}
+
+.brandName {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.modelsContainer {
+  flex: 1;
+  position: relative;
+  border: 1px solid #ddd;
+  padding: 15px;
+  overflow: hidden;
+}
+
+.modelsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  height: 100%;
+  overflow-y: auto;
+  scrollbar-width: none; /* Hide default Firefox scrollbar */
+  -ms-overflow-style: none; /* Hide IE/Edge scrollbar */
+  align-content: start; /* Add this line */
+}
+
+.modelsGrid::-webkit-scrollbar {
+  display: none; /* Hide Chrome/Safari scrollbar */
+}
+
+.modelCard {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border: 1px solid #333;
+  background: #111;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.modelCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+.modelImageWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+  padding: 10px;
+}
+
+.modelImage {
+  max-width: 90%;
+  max-height: 120px;
+  object-fit: contain;
+}
+
+.modelOverlay {
+  width: 100%;
+  text-align: center;
+  background: #1b1b1b;
+  padding: 8px;
+  border-top: 1px solid #333;
+}
+
+.modelName {
+  margin: 0;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.modelYears {
+  margin: 0;
+  font-size: 12px;
+  color: #aaa;
+}
+
+/* External scrollbar styles */
+.brandsContainer::after, .modelsContainer::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -12px;
+  width: 8px;
+  height: 100%;
+  background: transparent;
+  pointer-events: none;
+}
+
+.brandsContainer::before, .modelsContainer::before {
+  content: '';
+  position: absolute;
+  right: -12px;
+  width: 8px;
+  background: grey;
+  border-radius: 10px;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.brandsContainer:hover::before, .modelsContainer:hover::before {
+  opacity: 1;
+}
+
+.brandsContainer::before {
+  height: calc(100% * var(--brands-scroll-height, 1));
+  top: calc(100% * var(--brands-scroll-top, 0));
+}
+
+.modelsContainer::before {
+  height: calc(100% * var(--models-scroll-height, 1));
+  top: calc(100% * var(--models-scroll-top, 0));
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .modelsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .modelsSection {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  
+  .brandsContainer {
+    width: 100%;
+    /* height: 200px; */
+  }
+  
+  .brandsList {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+  
+  .brandItem {
+    flex-direction: column;
+    text-align: center;
+    min-width: 100px;
+  }
+  
+  .brandLogo {
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+  
+  .modelsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .modelsGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .typeTabsContainer {
+    padding: 0 30px;
+  }
+}

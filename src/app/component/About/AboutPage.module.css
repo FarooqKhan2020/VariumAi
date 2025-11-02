@@ -1,0 +1,305 @@
+/* components/AboutPage.module.css */
+
+.aboutPage {
+  min-height: 100vh;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 0 4rem;
+}
+
+
+.aboutPage {
+  min-height: 100vh;
+  background-color: #000; /* Base black */
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+
+  /* Golden gradients only on edges */
+  background-image: 
+    radial-gradient(circle at 0% 0%, rgba(195,162,113,0.3) 0%, rgba(195,162,113,0) 0%),
+    radial-gradient(circle at 100% 0%, rgba(195,162,113,0.25) 0%, rgba(195,162,113,0) 20%),
+    radial-gradient(circle at 0% 100%, rgba(195,162,113,0.2) 0%, rgba(195,162,113,0) 10%),
+    radial-gradient(circle at 100% 100%, rgba(195,162,113,0.18) 0%, rgba(195,162,113,0) 70%),
+    radial-gradient(circle at 50% 50%, rgba(195,162,113,0.12) 0%, rgba(195,162,113,0) 70%);
+
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+
+/* Hero Section */
+.heroSection {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+.mainTitle {
+  /* font-size: 4.5rem; */
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 3rem;
+  line-height: 1.1;
+  font-family: Montserrat, sans-serif
+}
+
+.gradientText {
+  background: linear-gradient(180deg, #E1BC88 0%, #7B674A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.heroContent {
+  max-width: 900px;
+}
+
+.sectionSubtitle {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #CCCCCC;
+  margin-bottom: 0;
+}
+
+/* General Section Styles */
+.section {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  padding: 4rem 0;
+  padding-bottom: 0;
+}
+
+.section:last-child {
+  padding-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+/* Two Column Layout */
+.twoColumnLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.paragraphGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.paragraph {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #CCCCCC;
+  margin: 0;
+}
+
+/* Image Styles */
+.imageContent {
+  display: flex;
+  justify-content: center;
+}
+
+.imageWrapper {
+  width: 100%;
+  max-width: 500px;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+/* Features List */
+.featuresList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.featureItem {
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border-left: 4px solid #E1BC88;
+}
+
+.featureTitle {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  color: #E1BC88;
+}
+
+.featureDescription {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #CCCCCC;
+  margin: 0;
+}
+
+/* Mission Section */
+.missionContent {
+  max-width: 900px;
+}
+
+.missionList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.missionItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.bullet {
+  color: #E1BC88;
+  font-size: 1.5rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.missionText {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #CCCCCC;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .mainTitle {
+    font-size: 3.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.8rem;
+  }
+
+  .description,
+  .paragraph,
+  .featureDescription,
+  .missionText {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutPage {
+    padding: 0 1.5rem;
+  }
+
+  .heroSection,
+  .section {
+    padding: 3rem 0;
+  }
+
+  .mainTitle {
+    font-size: 2.8rem;
+    text-align: center;
+  }
+
+  .twoColumnLayout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+    text-align: center;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .featureItem {
+    text-align: left;
+    padding: 1.2rem;
+  }
+
+  .missionItem {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutPage {
+    padding: 0 1rem;
+  }
+
+  .mainTitle {
+    font-size: 2.2rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1.4rem;
+  }
+
+  .description,
+  .paragraph,
+  .featureDescription,
+  .missionText {
+    font-size: 1rem;
+  }
+
+  .featureTitle {
+    font-size: 1.1rem;
+  }
+
+  .featureItem {
+    padding: 1rem;
+  }
+
+  .missionItem {
+    gap: 0.7rem;
+  }
+
+  .bullet {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+
+
