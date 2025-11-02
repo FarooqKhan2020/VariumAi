@@ -81,7 +81,7 @@ export default function Hero() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -100 }}
                     transition={{ duration: 0.6 }}
-                    className="relative w-[90%] h-[300px] md:h-[400px] flex justify-center items-center overflow-hidden"
+                    className="relative w-[100%] h-[300px] md:h-[400px] flex justify-center items-center overflow-hidden"
                 >
                     <Image
                         src={cars[current]}
