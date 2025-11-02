@@ -558,10 +558,16 @@
     min-width: 150px;
   }
   
-  .viewSwitch {
-    bottom: 50px; /* Position adjust */
+  /* .viewSwitch {
+    bottom: 50px; 
     padding: 4px;
     gap: 4px;
+  } */
+
+    .viewSwitch {
+    bottom: auto; /* Position adjust */
+    top: 100px;
+   
   }
   
   .zoomControls {
@@ -645,13 +651,12 @@
     min-width: 130px;
   }
   
-  .viewSwitch {
-    bottom: 35px; /* Position adjust */
-  }
+  
+  
   
   .zoomControls {
     right: 8px;
-    bottom: 80px; /* InfoBox ke opposite side */
+    bottom: 20px; /* InfoBox ke opposite side */
   }
   
   /* Stack zoom controls vertically on very small screens */
