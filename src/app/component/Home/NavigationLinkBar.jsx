@@ -25,7 +25,8 @@ const NavigationLinkBar = () => {
     { icon: FaNewspaper, label: 'NEWS', link: '/news' },
     { icon: FaBell, label: 'NOTIFICATIONS', link: '/notifications' },
     { icon: FaComments, label: 'INBOX', link: '/inbox' },
-    { icon: FaUsers, label: 'FRIENDS', link: '/friends' },
+    // { icon: FaUsers, label: 'FRIENDS', link: '/friends' },
+    { icon: FaUsers, label: 'FRIENDS', link: '#' },
     { icon: FaCalendarAlt, label: 'SCHEDULE', link: '/schedule' },
     { icon: FaCog, label: 'SETTINGS', link: '/settings' }
   ];
