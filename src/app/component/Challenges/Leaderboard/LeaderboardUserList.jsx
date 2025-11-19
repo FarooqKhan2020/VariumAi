@@ -80,7 +80,7 @@ const LeaderboardUserList = () => {
       <div className={styles.leaderboardListWrapper}>
         <div className={styles.leaderboardList} ref={scrollContainerRef}>
           {leaderboardData.map((user) => (
-            <Link href="/challenges/leaderboard/carshowroom" key={user.id} className={styles.leaderboardUser}>
+            <Link href="/challenges/leaderboard/showroom" key={user.id} className={styles.leaderboardUser}>
               <div className={styles.userAvatarWrapper}>
                 <img src={user.avatar} alt={user.name} className={styles.userAvatar} />
                 <div className={styles.userPosition}>{user.position}</div>

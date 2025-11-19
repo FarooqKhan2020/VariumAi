@@ -34,9 +34,8 @@ const NavigationLinkBar = () => {
   const navigationButtons = [
     { icon: FaImages, label: 'GALLERY', link: '/gallery' },
     { icon: FaClock, label: 'TIMELINE', link: '#' },
-    { icon: GiHomeGarage, label: ' GARAGE', link: '#' },
     // { icon: FaClock, label: 'TIMELINE', link: '/timeline' },
-    // { icon: GiHomeGarage, label: ' GARAGE', link: '/garage' },
+    { icon: GiHomeGarage, label: ' GARAGE', link: '/garage' },
     { icon: TbVs, label: 'CHALLENGES', link: 'challenges/challenges' },
     { icon: MdLeaderboard, label: 'LEADERBOARD', link: 'challenges/leaderboard' },
     { icon: FaCar, label: 'MY DESIGN', link: 'challenges/mydesign' },

@@ -64,7 +64,7 @@ const Leaderboard = () => {
                     <span className={styles.topDesignLabel}>TOP DESIGNS</span>
                     <span className={styles.carTitleLabel}>{car.title}</span>
                   </div>
-                  <Link href="/challenges/leaderboard/carshowroom" className={styles.viewBtn}>VIEW</Link>
+                  <Link href="/challenges/leaderboard/showroom" className={styles.viewBtn}>VIEW</Link>
                 </div>
               </div>
             ))}
